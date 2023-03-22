@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ d:[Int], _ budget:Int) -> Int {
+func solution3(_ d:[Int], _ budget:Int) -> Int {
     
     
     // 배열d안에서 합계가 budget이 되는 가장 작은 원소들의 갯수
