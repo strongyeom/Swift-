@@ -17,8 +17,3 @@ func solution(_ n: Int) -> Int {
     
     return count
 }
-let result = solution(5)
-print(result)
-
-
-

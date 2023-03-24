@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ left:Int, _ right:Int) -> Int {
+func solution3(_ left:Int, _ right:Int) -> Int {
     
     var res: Int = 0
     for i in left...right {
