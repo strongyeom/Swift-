@@ -27,5 +27,3 @@ func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
     
     return result
 }
-let result = solution(5, [2, 4], [1, 3, 5])
-print(result)

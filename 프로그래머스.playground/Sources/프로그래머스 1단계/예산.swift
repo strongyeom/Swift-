@@ -15,7 +15,7 @@ func solution3(_ d:[Int], _ budget:Int) -> Int {
     //6-3 3
     //3-3 0
     
-    var arrayS: [Int] = d.sorted()
+    let arrayS: [Int] = d.sorted()
     print(arrayS)
     var res = 0
     var count = budget

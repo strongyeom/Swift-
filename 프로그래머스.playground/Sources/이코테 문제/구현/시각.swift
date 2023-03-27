@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ n: Int) -> Int {
+func solution2_2(_ n: Int) -> Int {
     
     
     var count = 0

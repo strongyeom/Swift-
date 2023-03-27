@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ array: [String], _ n : Int) -> [Int] {
+func solution2_1(_ array: [String], _ n : Int) -> [Int] {
     // 처음 [1, 1]이 주어지는데 첫번째 인덱스는 행, 두번째 인덱스는 열
     // RLUD일때 R과 L은 두번째에서만 작용, U과 D는 첫번째 인덱스에서만 작용
     var r2 = 1

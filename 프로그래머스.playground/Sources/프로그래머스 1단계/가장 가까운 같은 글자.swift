@@ -3,7 +3,7 @@ import Foundation
 func solution(_ s:String) -> [Int] {
     
     var resultArray: [Int] = []
-    var arrayS = s.map { String($0) }
+    let arrayS = s.map { String($0) }
     //0...5   ( banana )
     for i in 0..<s.count {
         var a1 = i
