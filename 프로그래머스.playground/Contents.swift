@@ -1,31 +1,26 @@
 import Foundation
 
-func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
+func solution(_ numbers:[Int]) -> [Int] {
     
-   // 제한조건을 생각하기
-    
-    // 잃어버린것 중에서 여벌 옷을 가져온 배열이 포함되어있지 않았을때 정렬 -> 중복값을 제거
-    let losted = lost.filter { !reserve.contains($0) }.sorted()
-    // 여벌옷이 있는 것 중에서 도난 당했을것 중복 제거 한다음 정렬
-    var reversed = reserve.filter { !lost.contains($0) }.sorted()
-    
-    var result = n - losted.count
-    print(losted)
-    print(reversed)
-    
-    for i in losted {
-        for j in 0..<reversed.count {
-            if i == reversed[j]-1 || i == reversed[j]+1 {
-                reversed.remove(at: j)
-                result += 1
-
-                // break 2번도 빌려주고 4번도 빌려주고 이렇게 안되게 하기 위해 - 조건에 여벌옷은 2벌만 있다고함
-                break
-            }
+    // 첫번째 인덱스부터 다른 인덱스들과 한번씩 다 더하고 set 배열에 담고
+    // set 배열을 다시 배열로 바꾸고 오름차순으로 정리해보면?
+    var a1: [Int] = []
+   //0...4
+    for i in 0..<numbers.count {
+        // j: 0 ...4
+        var b1: Int = 0
+        for j in i..<numbers.count-1 {
+             b1 = numbers[i] + numbers[j+1]
+            a1.append(b1)
+           
         }
     }
+    print(a1)
     
-    return result
+    var b1 = Set(a1).sorted()
+    print(b1)
+    
+    return b1
 }
-let result = solution(5, [2, 4], [1, 3, 5])
+let result = solution([5,0,2,7])
 print(result)
