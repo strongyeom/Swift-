@@ -24,3 +24,23 @@ func solution(_ a:Int, _ b:Int, _ n:Int) -> Int {
     }
     return result
 }
+
+/*
+ 2023.04.07 풀이
+ func solution(_ a:Int, _ b:Int, _ n:Int) -> Int {
+     
+     // (빈병 - 빈병/n + 빈병%n)
+     
+     var n = n
+     var b = b // 빈병을 갖다주면 받는 병수의 갯수
+     var c: Int = 0
+     while n >= a {
+         //n: 20 , a: 2, b: 1
+         c += (n/a)*b
+         n = (n-((n/a)*a) + (n/a)*b)
+         print(c)
+         print(n)
+     }
+     return c
+ }
+ */
