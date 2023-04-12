@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ numbers:[Int]) -> [Int] {
+func solution321(_ numbers:[Int]) -> [Int] {
     //Set을 사용하면 중복된 것을 제거 할 수있다.
     
     var result: [Int] = []
