@@ -21,3 +21,24 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
     }
     return resultarry
 }
+
+/*
+ 2023.04.17 풀이
+ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
+     
+     // 빈배열
+     var result:[Int] = []
+     
+     var a1: [Int] = [] // [ 5, 2, 6, 3 ] -> [2, 3, 5, 6]
+     print(a1)
+     var b1: Int = 0
+     
+     for i in 0..<commands.count {
+         a1 = array[commands[i][0]-1...commands[i][1]-1].sorted()
+         b1 = a1[commands[i][2]-1]
+         result.append(b1)
+     }
+     
+     return result
+ }
+ */
