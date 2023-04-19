@@ -20,7 +20,3 @@ func solution(_ name:[String], _ yearning:[Int], _ photo:[[String]]) -> [Int] {
     }
     return emptyArray
 }
-let result = solution(["may", "kein", "kain", "radi"], [5, 10, 1, 3], [["may"],["kein", "deny", "may"], ["kon", "coni"]])
-print(result)
-
-
