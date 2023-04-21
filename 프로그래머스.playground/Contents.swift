@@ -1,26 +1,32 @@
 import Foundation
 
-func solution(_ name:[String], _ yearning:[Int], _ photo:[[String]]) -> [Int] {
+func solution(_ k:Int, _ score:[Int]) -> [Int] {
     
+    // 가장 큰수부터 k번째 까지 끊기
     
-    // 첫번째 name 과 yearning 값을 같게 한다.
+    var result: [Int] = []
     var emptyArray: [Int] = []
-    for i in photo {
-        // ["may", "kein", "kain", "radi"]
-        var total = 0
-        // 4
-        for j in 0..<name.count {
-            
-            if i.contains(name[j]) {
-                total += yearning[j]
-            }
-        }
-        emptyArray.append(total)
-        print(emptyArray)
+    for i in 0..<score.count {
+        
+        result.append(score[i])
+        result.sorted(by: <)
+        
     }
-    return emptyArray
+    
+    
+    
+    
+    
+    
+    // 끊은 k번째 마지막 최하위 배열에 추가하기
+    
+    
+    
+    
+    
+    return []
 }
-let result = solution(["may", "kein", "kain", "radi"], [5, 10, 1, 3], [["may"],["kein", "deny", "may"], ["kon", "coni"]])
+let result = solution(3, [10, 100, 20, 150, 1, 100, 200])
 print(result)
 
 
