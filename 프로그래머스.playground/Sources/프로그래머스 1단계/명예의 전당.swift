@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ k:Int, _ score:[Int]) -> [Int] {
+func solutiong(_ k:Int, _ score:[Int]) -> [Int] {
     
     // 가장 큰수부터 k번째 까지 끊기
     
@@ -26,7 +26,3 @@ func solution(_ k:Int, _ score:[Int]) -> [Int] {
     }
     return result
 }
-let result = solution(3, [10, 100, 20, 150, 1, 100, 200])
-print(result)
-
-
