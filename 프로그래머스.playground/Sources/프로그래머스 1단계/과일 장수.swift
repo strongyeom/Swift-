@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
+func solutionf(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
     
     // 1점부터 k점까지 점수의 수
     // k점이 최상품
@@ -19,8 +19,6 @@ func solution(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
     
     return answer
 }
-let result = solution(4, 3, [4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2])
-print(result)
 /*
  실패 케이스
  func solution(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
