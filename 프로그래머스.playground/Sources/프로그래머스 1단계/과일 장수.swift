@@ -43,4 +43,17 @@ func solutionf(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
      
      return result
  }
+ 
+  다른 풀이
+  2023.04.29
+  func solution(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
+      let s = score.sorted(by: >)
+      var answer = 0
+      for i in stride(from: m-1, to: score.count, by: m) {
+          answer += s[i]*m
+      }
+      
+      
+      return answer
+  }
  */
