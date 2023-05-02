@@ -1,23 +1,8 @@
 import Foundation
 
-func solution(_ n:Int, _ m:Int, _ section:[Int]) -> Int {
-    
-    // 2
-    var now = section[0]
-    var counter = 0
-    
-    // [2, 3, 6]
-    for s in section {
-        // 2
-        if s >= now {
-            counter += 1
-            // 2 + 4
-            now = s + m
-        }
-    }
-
-    return counter
+func solution(_ lottos:[Int], _ win_nums:[Int]) -> [Int] {
+    return []
 }
 
-let result = solution(8, 4, [2, 3, 6])
+let result = solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19])
 print(result)
