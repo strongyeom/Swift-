@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ lottos:[Int], _ win_nums:[Int]) -> [Int] {
+func solution로또(_ lottos:[Int], _ win_nums:[Int]) -> [Int] {
     
     // 순서 상관없이 해당되는 거 있으면 count를 올려준다
     // 0 있을때는 다 맞는다는 가정 or 못 맞는다는 가정
@@ -49,6 +49,3 @@ func solution(_ lottos:[Int], _ win_nums:[Int]) -> [Int] {
     
     return banswer
 }
-
-let result = solution([45, 4, 35, 20, 3, 9], [20, 9, 3, 45, 4, 35])
-print(result)
