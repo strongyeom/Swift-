@@ -1,27 +1,23 @@
 import Foundation
 
-func solution(_ cards1:[String], _ cards2:[String], _ goal:[String]) -> String {
-    var cards1 = cards1, cards2 = cards2
- 
-    for s in goal{
-        if !cards1.isEmpty && cards1[0] == s {
-            cards1.removeFirst()
-            print(cards1)
-        }else if !cards2.isEmpty && cards2[0] == s {
-            cards2.removeFirst()
-            print(cards2)
-        }else{
-            return "No"
+func solution(_ n:Int, _ m:Int, _ section:[Int]) -> Int {
+    
+    // 2
+    var now = section[0]
+    var counter = 0
+    
+    // [2, 3, 6]
+    for s in section {
+        // 2
+        if s >= now {
+            counter += 1
+            // 2 + 4
+            now = s + m
         }
     }
-    return "Yes"
+
+    return counter
 }
 
-let result = solution(["i", "water", "drink"], ["want", "to"], ["i", "want", "to", "drink", "water"])
+let result = solution(8, 4, [2, 3, 6])
 print(result)
-
-/*
- i : ["drink", "water"] , ["want", "to"]
- want: ["drink", "water"], ["to"]
- to: ["drink", "water"], []
- */
