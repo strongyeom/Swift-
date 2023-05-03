@@ -1,6 +1,7 @@
+
 import Foundation
 
-func solution(_ number: Int, _ limit: Int, _ power: Int) -> Int {
+func solution기사단원(_ number: Int, _ limit: Int, _ power: Int) -> Int {
     var result = 0
     var divisorCount = Array(repeating: 0, count: number + 1)
     print(divisorCount)
@@ -25,20 +26,6 @@ func solution(_ number: Int, _ limit: Int, _ power: Int) -> Int {
     
     return result
 }
-
-let result = solution(10, 3, 2)
-print(result)
-
-
-
-var aa = 10
-
-for i in 1...aa {
-    for j in stride(from: i, through: aa, by: i) {
-        print(j)
-    }
-}
-
 /*
  실패 케이스 시간 초과
  1. 첫번째 방법
