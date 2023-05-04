@@ -36,9 +36,6 @@ func solution(_ X:String, _ Y:String) -> String {
     
 }
 
-let result = solution("12321", "42531")
-print(result)
-
 /*
  var aa: [Int] = []
  
