@@ -1,34 +1,99 @@
 import Foundation
 
-func findPrime(_ number: Int) -> [Int] {
+func solution(_ X:String, _ Y:String) -> String {
     
-    // count: number를 넣어봤습니다.
-    var isPrime = Array(repeating: true, count: number)
-    print(isPrime)
+    var y = Y
+    // x,y의 짝꿍이 존재하지 않는다면 -1 즉, 포함되어 있지 않다면
+    var notPartner: [String] = X.map { String($0) }.filter { Y.contains($0)}
+    print("notPartner :",notPartner)
+    if notPartner.isEmpty {
+        return "-1"
+    } else if notPartner.count == notPartner.filter({ $0 == "0"}).count {
+        return "0"
+    }
+    print(type(of: notPartner))
+//
+//    // x,y의 짝꿍이 0 이라면
+//    var bb = notPartner.map { Int($0)! }.reduce(0,+)
+//    if bb < 1 {
+//        return "0"
+//    }
+//    print("x와 y의 합계 : ",bb)
+
     
-    // 소수를 담아줄 배열
-    var primes: [Int] = []
+    // 탈락시키는 방법은 어떰??
     
-    for i in 0..<number {
-        
-        if isPrime[i] == true {
-            primes.append(i)
-            for j in stride(from: i*i, through: number, by: i) {
-                isPrime[j] = false
+    var cc: [String] = []
+
+    for i in X {
+        if y.contains(String(i)) {
+            if let number = y.firstIndex(of: i) {
+               
+                var result = y.remove(at: number)
+                cc.append(String(result))
             }
+            print(cc)
         }
     }
-    return primes
+    
+    var finalResult = cc.joined()
+    print(finalResult)
+    
+    return finalResult
 }
 
-let result = findPrime(20)
+let result = solution("100", "203045")
 print(result)
 
+/*
+ var aa: [Int] = []
+ 
+ for i in notPartner {
+     aa.append(Int(String(i))!)
+ }
+ print(aa)
+ 
+ 
+ if bb < 1 {
+    return "0"
+ }
+ */
 
+/*
+ 
+ 첫번째 실패 케이스
+ import Foundation
 
-// i가 2일때
-// [true, true, true, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
-// i가 3일때
-// [true, true, true, true, false, true, false, true, false, false, false, true, false, true, false, false, false, true, false, true, false]
-// i가 4일때
-// [true, true, true, true, false, true, false, true, false, false, false, true, false, true, false, false, false, true, false, true, false]
+ func solution(_ X:String, _ Y:String) -> String {
+     
+     
+     // x,y의 짝꿍이 존재하지 않는다면 -1 즉, 포함되어 있지 않다면
+     var notPartner = X.map { $0 }.filter { Y.contains($0)}
+     if notPartner.isEmpty {
+         return "-1"
+     }
+     
+     // x,y의 짝꿍이 0 이라면
+     var bb = notPartner.map { Int(String($0))! }.reduce(0,+)
+     if bb < 1 {
+         return "0"
+     }
+     
+     // 탈락시키는 방법은 어떰??
+     
+     var cc: [String] = []
+     var y = Y
+     
+     for i in X {
+         if y.contains(String(i)) {
+             if let number = y.firstIndex(of: i) {
+                
+                 var result = y.remove(at: number)
+                 cc.append(String(result))
+             }
+         }
+     }
+     var finalResult = cc.sorted(by: >).joined()
+     return finalResult
+ }
+ */
