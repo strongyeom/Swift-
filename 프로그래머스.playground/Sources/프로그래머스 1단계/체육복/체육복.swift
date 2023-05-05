@@ -48,7 +48,3 @@ func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
     
     return n - count
 }
-
-let result = solution(5, [2, 4], [3])
-print(result)
-
