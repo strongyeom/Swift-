@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ babbling:[String]) -> Int {
+func solution옹알이2(_ babbling:[String]) -> Int {
     //같은 발음을 연속해서 할 수 없다.
     var result = [String]()
     
@@ -9,6 +9,7 @@ func solution(_ babbling:[String]) -> Int {
     //사용 가능한 단어를 숫자로 변환 // ["aya", "yee", "u", "maa"]
     for babble in babbling {
         result.append(
+            // replacingOccurrences: of -> with로 치환한다.
             babble.replacingOccurrences(of: "aya", with: "1")
                 .replacingOccurrences(of: "ye", with: "2")
                 .replacingOccurrences(of: "woo", with: "3")
@@ -29,39 +30,3 @@ func solution(_ babbling:[String]) -> Int {
     }
     return count
 }
-
-let result = solution(["aya", "yee", "u", "maa"])
-print(result)
-
-var cc = ""
-var ce = "12"
-var ceq = cc + ce
-print(ceq)
-
-/*
- 다른 풀이
- func solution(_ babbling:[String]) -> Int {
-     var answer = 0
-     for bab in babbling {
-         var prons = ["aya", "ye", "woo", "ma"]
-         var used: [String] = []
-         var block = ""
-         for b in bab {
-             block = block + String(b)
-             //print("block: \(block)" )
-             if prons.contains(block) && used.last != block {
-                 used.append(block)
-                 block = ""
-             }
-             //print("prons: \(prons)"  )
-
-         }
-         if block == "" {
-             answer = answer + 1
-         }
-     }
-
-     return answer
-
- }
- */
