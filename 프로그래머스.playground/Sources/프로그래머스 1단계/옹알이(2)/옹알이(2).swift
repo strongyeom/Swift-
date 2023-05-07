@@ -10,6 +10,7 @@ func solution옹알이2(_ babbling:[String]) -> Int {
     for babble in babbling {
         result.append(
             // replacingOccurrences: of -> with로 치환한다.
+            
             babble.replacingOccurrences(of: "aya", with: "1")
                 .replacingOccurrences(of: "ye", with: "2")
                 .replacingOccurrences(of: "woo", with: "3")
@@ -30,3 +31,27 @@ func solution옹알이2(_ babbling:[String]) -> Int {
     }
     return count
 }
+
+/*
+ 다른 풀이
+ 
+ func solution(_ babbling:[String]) -> Int {
+     
+     var count = 0
+     for i in babbling {
+         var str = i
+         str = str.replacingOccurrences(of: "aya", with: "1")
+         str = str.replacingOccurrences(of: "ye", with: "2")
+         str = str.replacingOccurrences(of: "woo", with: "3")
+         str = str.replacingOccurrences(of: "ma", with: "4")
+         print(str)
+         
+         if Int(str) != nil && !str.contains("11") && !str.contains("22") && !str.contains("33") && !str.contains("44"){
+                   count += 1
+               }
+         
+     }
+     
+     return count
+ }
+ */
