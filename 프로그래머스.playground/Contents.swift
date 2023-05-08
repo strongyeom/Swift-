@@ -1,43 +1,43 @@
 import Foundation
 
-func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
+func solution(_ new_id:String) -> String {
     
-    // 크레인을 통해 아래에서 부터 쌓임
-    // 아래서 부터 쌓이는 것들중 같은 수가 반복되면 없어짐
-    
-    var crainIndex = moves.map { $0 - 1 }
-    var board = board
-    print("crainIndex:",crainIndex)
-    var resultArray: [Int] = []
-    var finalresult: [Int] = []
-    var count = 0
-    
-    for k in crainIndex {
-        for i in 0..<board.count {
-            print(board[i][k])
-            // 하나씩 돌아가면서 해당 인덱스가 0보다 크면 빈 배열에 담고 해당 인덱스를 0으로 만들기
-            if board[i][k] > 0 {
-                resultArray.append(board[i][k])
-                board[i][k] = 0
-                break
-            }
+    // 1번째
+    var newId = new_id.lowercased()
+    print("1번째",newId)
+    // 2번째
+    var specialChr = "~!@#$%^&*()=+[{]}:?,<>/"
+    for i in specialChr {
+        if let number = newId.firstIndex(of: i) {
+            newId.remove(at: number)
         }
     }
-  print(resultArray)
+    print("2번째:",newId)
     
-    for j in 0..<resultArray.count {
-        finalresult.append(resultArray[j])
-        print("for문:",finalresult)
-        if  finalresult.endIndex > 1 && finalresult[finalresult.endIndex-1] == finalresult[finalresult.endIndex-2] {
-            finalresult.removeLast()
-            finalresult.removeLast()
-            count += 1
-        }
-        print("조건 후:",finalresult)
+    // 3번째
+    newId = newId.replacingOccurrences(of: "...", with: ".").replacingOccurrences(of: "..", with: ".").trimmingCharacters(in: [".", "."])
+    print("3번째",newId)
+    // 4번째
+    print("4번째",newId)
+    // 5번째
+    if newId.isEmpty {
+        newId = "a"
     }
+    print("5번째",newId)
     
-    return count * 2
+    // 6번째
+    while newId.count >= 16 {
+        newId.removeLast()
+    }
+    print("6번째",newId)
+    
+    // 7번째
+    while newId.count <= 2 {
+        newId += String(newId.last!)
+    }
+    print("7번째",newId)
+    return ""
 }
 
-let result = solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4])
+let result = solution("=.=")
 print(result)
