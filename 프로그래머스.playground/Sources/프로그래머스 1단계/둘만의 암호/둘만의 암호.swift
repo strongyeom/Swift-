@@ -28,9 +28,6 @@ func solution(_ s: String, _ skip: String, _ index: Int) -> String {
     return answer
 }
 
-let result = solution("aukks", "wbqd", 5)
-print(result)
-
 /*
  다른 풀이
  func solution(_ s:String, _ skip:String, _ index:Int) -> String {
