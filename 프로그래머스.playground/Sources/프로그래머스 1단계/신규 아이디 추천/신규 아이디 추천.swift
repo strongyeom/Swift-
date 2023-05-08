@@ -50,6 +50,3 @@ func solution(_ new_id:String) -> String {
     
     return id
 }
-
-let result = solution("=.=")
-print(result)
