@@ -8,6 +8,7 @@ func solution(_ s: String, _ skip: String, _ index: Int) -> String {
     let skipArray = skip.map { String($0) }
     print("skip배열",skipArray)
     
+    // 핵심!!
     for skipLetter in skipArray {
         if let index = alphabet.firstIndex(of: skipLetter) {
             alphabet.remove(at: index)

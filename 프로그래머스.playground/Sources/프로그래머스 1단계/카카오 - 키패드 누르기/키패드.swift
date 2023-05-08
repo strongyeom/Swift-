@@ -49,10 +49,7 @@ func solution(_ numbers:[Int], _ hand:String) -> String {
   }
   
   return result
-}
-
-let result = solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5], "right")
-print(result)
+} 
 
 
 /*
