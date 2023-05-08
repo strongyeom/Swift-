@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
+func solution인형뽑기(_ board:[[Int]], _ moves:[Int]) -> Int {
     
     // 크레인을 통해 아래에서 부터 쌓임
     // 아래서 부터 쌓이는 것들중 같은 수가 반복되면 없어짐
@@ -38,6 +38,3 @@ func solution(_ board:[[Int]], _ moves:[Int]) -> Int {
     
     return count * 2
 }
-
-let result = solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4])
-print(result)
