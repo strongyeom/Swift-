@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ ingredient:[Int]) -> Int {
+func solution햄버거만들기(_ ingredient:[Int]) -> Int {
     var stack: [Int] = []
     var ans = 0
     
@@ -24,10 +24,6 @@ func solution(_ ingredient:[Int]) -> Int {
     }
     return ans
 }
-
-let result = solution([2, 1, 1, 2, 3, 1, 2, 3, 1])
-print(result)
-
 /*
  다른 풀이
  func solution(_ ingredient:[Int]) -> Int {
