@@ -51,6 +51,3 @@ func solution(
 
     return answer
 }
-
-let result = solution(["ABACD", "BCEFD"], ["ABCD","AABB"])
-print(result)
