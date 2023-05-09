@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(
+func solution대충만든자판(
     _ keymap:[String],
     _ targets:[String]
 ) -> [Int] {
