@@ -1,31 +1,10 @@
 import Foundation
 
-func solution(_ ingredient:[Int]) -> Int {
-    var stack: [Int] = []
-    var ans = 0
-    
-    for i in ingredient {
-        
-        stack.append(i)
-        
-        if stack.count < 4 { continue }
-        
-        let n = stack.count
-        print("stack:",stack[n-4..<n])
-        print(type(of: stack[n-4..<n]))
-        print("Array(stack[n-4..<n]):",Array(stack[n-4..<n]))
-        print(type(of: Array(stack[n-4..<n])))
-        if Array(stack[n-4..<n]) == [1, 2, 3, 1] {
-            stack = Array(stack[0..<n-4])
-            ans += 1
-        }
-        
-        
-    }
-    return ans
+func solution(_ survey:[String], _ choices:[Int]) -> String {
+    return ""
 }
 
-let result = solution([2, 1, 1, 2, 3, 1, 2, 3, 1])
+let result = solution(["AN", "CF", "MJ", "RT", "NA"], [5, 3, 2, 7, 5])
 print(result)
 
 /*

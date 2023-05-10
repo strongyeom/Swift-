@@ -28,10 +28,9 @@ func solution햄버거만들기(_ ingredient:[Int]) -> Int {
  다른 풀이
  func solution(_ ingredient:[Int]) -> Int {
      
-     var aa = ingredient
      var emptyArray: [Int] = []
      var count = 0
-     for i in aa {
+     for i in ingredient {
          emptyArray.append(i)
          
          // contains는 단일 요소 대상으로 동작함
