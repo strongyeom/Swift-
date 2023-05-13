@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ survey:[String], _ choices:[Int]) -> String {
+func solution성격유형검사하기(_ survey:[String], _ choices:[Int]) -> String {
     
     // "RT", "TR", "FC", "CF", "MJ", "JM", "AN", "NA"
     
@@ -64,7 +64,3 @@ func solution(_ survey:[String], _ choices:[Int]) -> String {
     
     return answer
 }
-
-let result = solution(["AN", "CF", "MJ", "RT", "NA"], [5, 3, 2, 7, 5])
-print(result)
-
