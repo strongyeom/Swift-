@@ -1,6 +1,6 @@
 import Foundation
 
-func solution2(_ n: Int, _ k: Int) -> Int {
+func solution(_ n: Int, _ k: Int) -> Int {
     
     // 1번은 n -1
     // 2번은 if n%k == 0 이라면 실행
