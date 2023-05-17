@@ -38,3 +38,52 @@ func solution2_1(_ array: [String], _ n : Int) -> [Int] {
     var a3 = [b2, r2]
     return a3
 }
+
+/*
+ 2023.05.17 풀이
+ func solution(_ array: [String]) -> Int {
+
+     // 정사각형 공간을 벗어나지 않는다. 즉, 1이하로 떨어지지 않는다 기본 (1, 1) 시작
+     
+     // "R" , "L" 일때
+     
+     var startPoint: [Int] = [1, 1]
+     
+     for i in array {
+         switch i {
+         case "R":
+             startPoint[1] += 1
+             if startPoint[1] > array.count {
+                 startPoint[1] = array.count
+                 print("R 무시 :",startPoint)
+             }
+             print("R:",startPoint)
+         case "L":
+             startPoint[1] -= 1
+             if startPoint[1] < 1 {
+                 startPoint[1] = 1
+                 print("L 무시 :",startPoint)
+             }
+             print("L:",startPoint)
+         case "U":
+             startPoint[0] -= 1
+             if startPoint[0] < 1 {
+                 startPoint[0] = 1
+                 print("U 무시 :",startPoint)
+             }
+             print("U:",startPoint)
+         case "D":
+             startPoint[0] += 1
+             if startPoint[0] > array.count {
+                 startPoint[0] = array.count
+                 print("D 무시 :",startPoint)
+             }
+             print("D:",startPoint)
+         default:
+             break
+         }
+     }
+     
+     return 0
+ }
+ */
