@@ -1,177 +1,157 @@
 import Foundation
 
-func solution(_ players:[String], _ callings:[String]) -> [String] {
+func solution(_ today:String, _ terms:[String], _ privacies:[String]) -> [Int] {
     
-    // calling 된 사람은 앞 사람으 추월한 사람
-    
-    // ["mumu", "soe", "poe", "kai", "mine"]
-    
-    // ["kai", "kai", "mine", "mine"]
-    
-    // kai 일때 ["mumu", "soe", "kai", "poe", "mine"]
-    
-    // kai 일때 ["mumu", "kai", "soe", "poe", "mine"]
-    
-    // mine 일때 ["mumu", "kai", "soe", "mine", "poe"]
-    
-    // mine 일때 ["mumu", "kai", "mine", "soe", "poe"]
-    
-    // 결국 calling 된 된 players의 인덱스와 그 인덱스 -1 의 값을 체인지 해준다. !
+    // 모든 달은 28일까지 있다고 가정합니다.
     
     
-    // 등수가 바뀌기 때문에 변수로 할당
-    var result: [String] = players
-    // 딕셔너리 형태로 문자 : Int 담아주기
-    var callingDic: [String:Int] = [:]
+    // 일단 1달 2달 이렇게 주어지니, 1달은 28일로 계산
     
-    // calling에 있는 문자의 갯수를 세고, 그만큼 players에서 인덱스를 빼주면 되지 않을까?
-    // ex) calling안에 kai: 2, mine:2
-    // players 0, 1, 2, 3, 4
-    // players 0, 0, 0, 2, 2 , insert로 삽입하면 뒤로 하나씩 밀리지 잖아
+    // ex) 1월 1일 -> 2달 뒤.  3월 1일
+    /*
+     1 + 28 + 28
+     
+     28일때 몫을 달에 + 1, 나머지는 일수로
+     
+     
+     */
+    
+    // 하나씩 비교 하고 일수가 28 넘어가면 달수 올려주고 달수가 12를 넘어가면 년수 올려주고 해서
+    
+    
+    // 문자(A) 가 몇달인지 확인
+    // 해당 문자가 있는 달력에 해당 년도에 달수 더하기
+    // 달수를 더한 년도를 today와 비교
+    // 년, 달, 일 이 년 먼저 비교하고 작으면 인덱스 추가, 같으면 다음 달 비교 작으면 인덱스 추가 같으면 continue 일수 비교 ...
 
-    for (index, player) in players.enumerated() {
-        callingDic[player] = index
-    }
-    print("callingDic:",callingDic)
+    // 달수에 문자의 숫자를 더하고
+    // 일수에 -1 을 해준 값을
+    // 현재 날짜와 비교
     
+    var today = today.components(separatedBy: ".").map { Int($0)! }
+    var terms = terms.map { $0.components(separatedBy: " ") }
     
-    for i in callings {
-        var index = callingDic[i]
-        var forent = result[index!-1]
+    print("today",today)
+    print("terms",terms)
+    
+//    var aa = "2022.02.20 A".components(separatedBy: [".", " "])
+//    var array: [Int] = []
+//    if aa.contains("A") {
+//        aa.remove(at: 3)
+//
+//        var bb = aa.map { Int($0)! }
+//        print("Int버젼",bb)
+//
+//        bb[1] = bb[1] + 3
+//        bb[2] -= 1
+//
+//        print("더한 버젼 ",bb)
+//
+//        if bb[1] > 12 {
+//            bb[0] += 1
+//            bb[1] -= 12
+//        }
+//
+//        print("달수 12넘어갈때 버젼 ",bb)
+//
+//        if today[0] > bb[0] {
+//            array.append(privacies.startIndex+1)
+//        } else if today[1] > bb[1] {
+//            array.append(privacies.startIndex+1)
+//        } else if today[2] > bb[2] {
+//            array.append(privacies.startIndex+1)
+//        }
+//        print("array",array)
+//    }
+    
+    var answer: [Int] = []
+    var finalArray : [Int] = []
+    for i in privacies {
         
-        // ["mumu", "soe", "poe", "kai", "mine"]
-        result.swapAt(index!, index!-1)
-        // ["mumu", "soe", "kai", "poe", "mine"]
-       
-        callingDic[i] = callingDic[i]! - 1
-        callingDic[forent] = callingDic[forent]! + 1
-        print("callingDic:",callingDic)
+        // "2020.01.01",
+        // ["Z 3", "D 5"],
+        // ["2019.01.01 D", "2019.11.15 Z", "2019.08.02 D", "2019.07.01 D", "2018.12.28 Z"]
+        print("privacies i", i)
+        for j in terms {
+            print("terms: j",j)
+            if i.contains(j[0]) {
+                var arrayI = i.components(separatedBy: [".", " "])
+                arrayI.remove(at: 3)
+                print("arrayI",arrayI)
+                var result = arrayI.map{ Int($0)! }
+                print("result",result)
+                
+                var count = result[1]+Int(j[1])!
+
+                if count < 12 {
+                    result[2] -= 1
+                    print("더했을때 달이 12를 안넘어갈때: ",result)
+                    
+                    if result[2] == 0 {
+                        result[1] += Int(j[1])!
+                        result[2] = 28
+                        print("일수가 0일때",result)
+                    }
+                } else if count > 12 {
+                    print("달이 12를 넘어갈때: ",result)
+                    result[2] -= 1
+                   
+                    if result[2] == 0 {
+                        
+                        result[0] += 1
+                        result[1] -= 1
+                        result[2] = 28
+                        
+                        print("일수가 0일때",result)
+                        
+                    } else {
+                        result[0] += 1
+                        result[1] -= 12
+                        print("일수가 0아닐때 ",result)
+                    }
+                    
+                } else {
+                    result[2] -= 1
+                    if result[2] == 0 {
+                        result[1] -= 1
+                        result[2] = 28
+                        print("달이 12이고 일이 0일때",result)
+                    }
+                }
+                
+//                if result[2] == 0 {
+//                    result[1] -= 1
+//                    result[2] = 28
+//
+//
+//                    print("일수가 0일때",result)
+//                }
+               // print("result",result)
+                answer = result
+            }
+           
+        }
+        print("answer",answer)
+        
+        for k in 0..<today.count {
+            if today[k] > answer[k] {
+                if let number = privacies.firstIndex(of: i) {
+                    finalArray.append(number+1)
+                    print("finalArray",finalArray)
+                    break
+                }
+            } else {
+                continue
+            }
+        }
+        
+        
     }
     
-    print("최종 result:",result)
     
-    return result
+    return finalArray
 }
 
 
-let result = solution(["mumu", "soe", "poe", "kai", "mine"], ["kai", "kai", "mine", "mine"])
+let result = solution("2020.01.01", ["Z 3", "D 5"], ["2019.01.01 D", "2019.11.15 Z", "2019.08.02 D", "2019.07.01 D", "2018.12.28 Z"])
 print(result)
-// ["mumu", "kai", "mine", "soe", "poe"]
-// ["mumu", "kai", "soe", "mine", "poe"]
-// ["mumu", "kai", "soe", "poe", "mine"]
-// ["kai", "mumu", "soe", "poe", "mine"]
-
-/*
- 실패 테스트 7 ~ 13 시간 초과
- 
- // 등수가 바뀌기 때문에 변수로 할당
- var result: [String] = players
- 
- for i in 0..<callings.count {
- if let number = result.firstIndex(of: callings[i]) {
- result[number] = result[number-1]
- result[number-1] = callings[i]
- }
- }
- print(result)
- 
- // 에러 발생 코드
- for i in callings {
-     if callingDic[i] == nil && i != players[0] {
-         callingDic[i] = 1
-     } else if callingDic[i] != nil && i != players[0] {
-         callingDic[i] = callingDic[i]! + 1
-     }
- }
- 
- func solution(_ players:[String], _ callings:[String]) -> [String] {
-     
-     // calling 된 사람은 앞 사람으 추월한 사람
-     
-     // ["mumu", "soe", "poe", "kai", "mine"]
-     
-     // ["kai", "kai", "mine", "mine"]
-     
-     // kai 일때 ["mumu", "soe", "kai", "poe", "mine"]
-     
-     // kai 일때 ["mumu", "kai", "soe", "poe", "mine"]
-     
-     // mine 일때 ["mumu", "kai", "soe", "mine", "poe"]
-     
-     // mine 일대 ["mumu", "kai", "mine", "soe", "poe"]
-     
-     // 결국 calling 된 된 players의 인덱스와 그 인덱스 -1 의 값을 체인지 해준다. !
-     
-     
-     // 등수가 바뀌기 때문에 변수로 할당
-     var result: [String] = players
-     // calling 중복 갯수 세기
-     var callingDic: [String:Int] = [:]
-     
-     // calling에 있는 문자의 갯수를 세고, 그만큼 players에서 인덱스를 빼주면 되지 않을까?
-     // ex) calling안에 kai: 2, mine:2
-     // players 0, 1, 2, 3, 4
-     // players 0, 0, 0, 2, 2 , insert로 삽입하면 뒤로 하나씩 밀리지잖아
-
-     for (index, player) in players.enumerated() {
-         callingDic[player] = index
-     }
-     
-     
-     print("callingDic:",callingDic)
-     
-     
-     for (index, value) in callingDic {
-         print("index:",index)
-         if let number = result.firstIndex(of: index) {
-             // 해당 인덱스 삭제하고
-             //result.remove(at: number)
-             // 삽입하기
-             // mine
-             // ["mumu", "soe", "poe", "kai", "mine"]
-                 result.insert(index, at: number - value)
-             }
-         }
-     
-     print("최종 result:",result)
-     
-     return result
- }
- */
-
-/*
- func solution(_ players:[String], _ callings:[String]) -> [String] {
-     var result = players
-     var playerRankingDic: [String: Int] = [:]
-
-     for (index, player) in players.enumerated() {
-         playerRankingDic[player] = index
-     }
-     print("playerRankingDic:", playerRankingDic)
-
-     for calling in callings {
-         let targetIndex = playerRankingDic[calling]!
-         print("targetIndex:",targetIndex)
-         // ["mumu", "soe", "poe", "kai", "mine"]
-         let upperPlayer = result[targetIndex-1]
-         print("upperPlayer:",upperPlayer)
-         // map 변경
-         playerRankingDic[calling]! -= 1
-         print("playerRankingDic[calling]:",playerRankingDic[calling])
-         // reuslt의 인덱스가 바뀌기 때문에 작성해줌, 중복되지 않은 문자가 왔을대 대비
-         playerRankingDic[upperPlayer]! += 1
-         print("playerRankingDic[upperPlayer]:",playerRankingDic[upperPlayer])
-
-         // 결과 없데이트
-         let temp = result[targetIndex]
-         print("temp:",temp)
-         result[targetIndex] = result[targetIndex-1]
-         result[targetIndex-1] = temp
-         // ["mumu", "soe", "kai", "poe", "mine"]
-     }
-
-     return result
- }
- 
- 
- */
