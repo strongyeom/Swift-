@@ -1,40 +1,33 @@
 import Foundation
 
-func solution(_ N: String) -> Int {
-   // 딕셔너리 형태로 만들기
+func solution(_ name:String) -> Int {
     
-    var rowDic: [String:Int] = ["a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 6, "g": 7, "h": 8]
+    let alphabet = Array("abcdefghijklmnopqrstuvwxyz".uppercased())
+    let reversAlpha = Array("abcdefghijklmnopqrstuvwxyz".uppercased().reversed())
+    print(alphabet)
+    print(reversAlpha)
     
-    print(rowDic)
     
-    var startPoint: [Int] = []
-    let distance = [[-2,1], [-2,-1], [2,-1], [2,1], [-1,2], [-1,-2], [1,-2], [1,2]]
     var count = 0
-    
- 
-    for i in N {
-        if let number = rowDic[String(i)] {
-            startPoint.append(number)
-        } else {
-            startPoint.append(Int(String(i))!)
-        }
-    }
-    
-    print("startPoint",startPoint)
+    var aa = 0
+    // for문으로 하나씩 돌리는데 A가 있으면 +1만 해주기
+    for i in name {
+        guard let firstNumber = alphabet.firstIndex(of: i) else { return 0 }
+      
 
-    for j in 0..<distance.count {
+        print("firstNumber",firstNumber)
+       
+        print(type(of: firstNumber))
+      
+            count += firstNumber
         
-        var row = startPoint[0] + distance[j][0]
-        var columns = startPoint[1] + distance[j][1]
-        
-        if row > 0 && row < 9 && columns > 0 && columns < 9 {
-            count += 1
-        }
     }
     print("count",count)
-    
+    print(name.count-1)
+    aa =  count - (name.count-1)
+    // AAAAAA
+    print("aa",aa)
     return 0
 }
-
-let result = solution("c2")
+let result = solution("JEROEN")
 print(result)
