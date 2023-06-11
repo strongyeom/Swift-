@@ -1,6 +1,6 @@
 import Foundation
 
-func solutionJadenCase문자열(_ s:String) -> String {
+func solution(_ s:String) -> String {
     
     // 반복문을 사용하여 " " 를 확인하고, 앞 문자를 대문자로 만들어주기
     var result: String = ""
@@ -26,9 +26,9 @@ func solutionJadenCase문자열(_ s:String) -> String {
     print("result",result)
     return ""
 }
-let result = solution("3people unFollowed me")
-print(result)
 
+let result = solution("")
+print(result)
 
 
 

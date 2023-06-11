@@ -26,4 +26,3 @@ func solutionJadenCase문자열(_ s:String) -> String {
     print("result",result)
     return ""
 }
-let result = solution("3people unFollowed me")
