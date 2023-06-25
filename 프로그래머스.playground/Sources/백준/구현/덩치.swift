@@ -1,6 +1,6 @@
 import Foundation
 
-func implementation4() {
+func implementation7() {
     let input = Int(readLine()!)!
     var result: [[Int]] = []
     var finalArray: [Int] = []

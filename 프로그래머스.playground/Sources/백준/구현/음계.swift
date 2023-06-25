@@ -1,6 +1,6 @@
 import Foundation
 
-func implementation4() {
+func implementation6() {
     let T = Int(readLine()!)!
 
     for _ in 1...T {
