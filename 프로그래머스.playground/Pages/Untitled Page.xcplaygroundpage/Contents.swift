@@ -1,64 +1,78 @@
 import Foundation
 
-func solution(_ s:String) -> Bool {
+func solution(_ s:String) -> [Int] {
+    
+    var s = s
+    var count = 0, times = 0
+    while s != "1" {
+        let replaceCount = s.filter { $0 == "0" }.count
+        count += replaceCount
 
-    if let firstCha = s.first {
-        if firstCha == ")" {
-            return false
-        }
+        s = String(s.count - replaceCount, radix: 2)
+        times += 1
     }
-    var count: Int = 0
-    for i in s {
-        if String(i) == "(" {
-            count += 1
-        } else {
-            count -= 1
-        }
-
-        if String(i) == ")" && count < 0 {
-            return false
-        }
-    }
-    if count == 0 {
-        return true
-    } else {
-        return false
-    }
+    
+    return [times, count]
 }
 
-let result = solution("(()))()(")
+let result = solution("1111111")
 print(result)
 
 /*
- 첫시도 : 실패 - 효율성 테스트 실패
- import Foundation
-
- func solution(_ s:String) -> Bool {
-  
-     var sString: String = ""
+ func solution(_ s:String) -> [Int] {
      
-     for i in s {
-         sString += String(i)
-         if sString.contains("()") {
-             sString.removeLast()
-             sString.removeLast()
+     // "110010101001"
+     
+     // "111111"
+     
+     // 6 / 2 => 110 2*2 +2*1 + 2*0
+     
+     // 110 => 11
+     
+     // 10 => 1
+     
+     
+     // 변환 횟수
+     var changedCount = 1
+     
+     // 제거된 0의 갯수
+     var zeroCount = 0
+     
+     var twoS = s
+     var exampleString = ""
+     
+     for i in twoS {
+         exampleString += String(i)
+         if exampleString.contains("0") {
+             exampleString.removeLast()
+             zeroCount += 1
          }
-         print("sString",sString)
+     }
+ //    print("exampleString",exampleString)
+ //    print("zeroCount",zeroCount)
+ //
+
+     // 첫번째 0을 제거, 문자열의 갯수를 이진법으로 전환 ==> 반복
+     // "111 111"
+     while exampleString != "1" {
+      
+         let example = exampleString.count
+         print("example",example)
+         let binaryNumber: String = String(example, radix: 2)
+         print("binaryNumber",binaryNumber)
+         changedCount += 1
+         exampleString = binaryNumber
+         
+         for _ in 0..<exampleString.count {
+             if let zeroNumber = exampleString.firstIndex(of: "0") {
+                 exampleString.remove(at: zeroNumber)
+                 zeroCount += 1
+             }
+         }
+         print("zeroCount",zeroCount)
+         print("changedCount",changedCount)
      }
      
-     if sString.isEmpty {
-         return true
-     } else {
-         return false
-     }
+     return [changedCount, zeroCount]
  }
-
- let result = solution("((()))")
- print(result)
-
-
-
-
  */
-
-

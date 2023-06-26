@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ s:String) -> Bool {
+func solution올바른괄호(_ s:String) -> Bool {
 
     if let firstCha = s.first {
         if firstCha == ")" {
@@ -25,10 +25,6 @@ func solution(_ s:String) -> Bool {
         return false
     }
 }
-
-let result = solution("(()))()(")
-print(result)
-
 /*
  첫시도 : 실패 - 효율성 테스트 실패
  import Foundation
