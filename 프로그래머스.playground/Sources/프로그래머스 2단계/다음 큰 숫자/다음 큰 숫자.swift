@@ -1,7 +1,7 @@
 
 import Foundation
 
-func solution(_ n:Int) -> Int {
+func solution다음큰숫자(_ n:Int) -> Int {
     
     // n이 주어졌을때 다음 큰수를 구해라
     // 조건
@@ -26,9 +26,5 @@ func solution(_ n:Int) -> Int {
         }
         
     }
-    
     return nextN
 }
-
-let result = solution(15)
-print(result)
