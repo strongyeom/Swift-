@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ N:Int, _ stages:[Int]) -> [Int] {
+func solution실패율(_ N:Int, _ stages:[Int]) -> [Int] {
         var tuple = [(Int, Double)]() // [스테이지: 실패율]
         var player = stages.count
         

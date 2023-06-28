@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ name:[String], _ yearning:[Int], _ photo:[[String]]) -> [Int] {
+func solution추억점수(_ name:[String], _ yearning:[Int], _ photo:[[String]]) -> [Int] {
     
     
     // 첫번째 name 과 yearning 값을 같게 한다.

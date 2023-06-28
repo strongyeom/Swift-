@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ sizes:[[Int]]) -> Int {
+func solution최소직사각형(_ sizes:[[Int]]) -> Int {
     
     
     //[배열을 큰수가 앞에 가게 하면]

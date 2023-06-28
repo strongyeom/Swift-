@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ answers:[Int]) -> [Int] {
+func solution모의고사(_ answers:[Int]) -> [Int] {
     
     // 1번 : 1, 2, 3, 4, 5 ...
     // 2번 : (2, 1), (2, 3), (2, 4), (2, 5) ...

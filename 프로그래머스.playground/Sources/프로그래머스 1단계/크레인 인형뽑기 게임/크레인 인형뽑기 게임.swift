@@ -1,6 +1,6 @@
 import Foundation
 
-func solution인형뽑기(_ board:[[Int]], _ moves:[Int]) -> Int {
+func solution크레인인형뽑기(_ board:[[Int]], _ moves:[Int]) -> Int {
     
     // 크레인을 통해 아래에서 부터 쌓임
     // 아래서 부터 쌓이는 것들중 같은 수가 반복되면 없어짐

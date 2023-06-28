@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ X:String, _ Y:String) -> String {
+func solution숫자짝꿍(_ X:String, _ Y:String) -> String {
     
     var answer: [Int] = []
     var arr = Array(repeating: 0, count: 10)

@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ s:String) -> [Int] {
+func solution가장가까운글자(_ s:String) -> [Int] {
     
     var resultArray: [Int] = []
     let arrayS = s.map { String($0) }

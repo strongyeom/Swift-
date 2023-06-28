@@ -1,6 +1,6 @@
 import Foundation
 
-func solutionf(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
+func solution과일장수(_ k:Int, _ m:Int, _ score:[Int]) -> Int {
     
     // 1점부터 k점까지 점수의 수
     // k점이 최상품

@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ new_id:String) -> String {
+func solution신규아이디추천(_ new_id:String) -> String {
     
     var id: String = new_id
     // 1단계

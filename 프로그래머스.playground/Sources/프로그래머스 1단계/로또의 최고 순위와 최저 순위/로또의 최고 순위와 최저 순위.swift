@@ -1,6 +1,6 @@
 import Foundation
 
-func solution로또(_ lottos:[Int], _ win_nums:[Int]) -> [Int] {
+func solution로또의최고최저(_ lottos:[Int], _ win_nums:[Int]) -> [Int] {
     
     // 순서 상관없이 해당되는 거 있으면 count를 올려준다
     // 0 있을때는 다 맞는다는 가정 or 못 맞는다는 가정

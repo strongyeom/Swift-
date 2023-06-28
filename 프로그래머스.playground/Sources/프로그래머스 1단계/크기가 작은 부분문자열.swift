@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ t:String, _ p:String) -> Int {
+func solution크기가작은부분문자열(_ t:String, _ p:String) -> Int {
     
     var result: [Int] = []
     let tmap = t.map { String($0) }  // for문으로도 만들어보기

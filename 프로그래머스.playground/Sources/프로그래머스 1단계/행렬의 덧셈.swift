@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
+func solution행렬의덧셈(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
     
     var result :[[Int]] = []
     

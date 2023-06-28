@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ s:String) -> Bool {
+func solution문자열다루기기본(_ s:String) -> Bool {
     
     let s = s
     if s.count == 4 || s.count == 6 {

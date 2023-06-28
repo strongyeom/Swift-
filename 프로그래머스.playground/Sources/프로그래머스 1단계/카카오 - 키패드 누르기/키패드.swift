@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ numbers:[Int], _ hand:String) -> String {
+func solution키패드(_ numbers:[Int], _ hand:String) -> String {
   enum KeypadHand {
     case left
     case right

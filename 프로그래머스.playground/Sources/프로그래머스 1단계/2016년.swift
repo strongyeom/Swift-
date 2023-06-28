@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ a:Int, _ b:Int) -> String {
+func solution2016년(_ a:Int, _ b:Int) -> String {
     
     let array: [String] = ["THU","FRI","SAT","SUN","MON","TUE","WED"]
     

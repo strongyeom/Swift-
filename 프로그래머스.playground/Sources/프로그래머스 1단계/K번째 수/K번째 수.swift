@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
+func solutionK번째수(_ array:[Int], _ commands:[[Int]]) -> [Int] {
     
     var resultarry: [Int] = []
     let arr = array

@@ -2,7 +2,7 @@ import Foundation
 
 
 // 2023.04.07 풀이
-func solution(_ food:[Int]) -> String {
+func solution푸드파이터대회(_ food:[Int]) -> String {
     
     // for문의 인덱스를 1부터 시작
     var b1: String = ""

@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ s:String, _ n:Int) -> String {
+func solution시저암호(_ s:String, _ n:Int) -> String {
     
     let smallLetters: [Character] = Array("abcdefghijklmnopqrstuvwxyz")
     let largeLetters: [Character] = Array("abcdefghijklmnopqrstuvwxyz".uppercased())

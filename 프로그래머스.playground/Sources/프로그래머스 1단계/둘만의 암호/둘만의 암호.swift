@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ s: String, _ skip: String, _ index: Int) -> String {
+func solution둘만의암호(_ s: String, _ skip: String, _ index: Int) -> String {
     var sArray = s.map { String($0) }
     print("s배열",sArray)
     var alphabet = "abcdefghijklmnopqrstuvwxyz".map { String($0) }

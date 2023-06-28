@@ -3,7 +3,7 @@ import Foundation
 // 4,5번 테스트 실패... 왜 했을까?
 import Foundation
 
-func solution(_ n:Int, _ arr1:[Int], _ arr2:[Int]) -> [String] {
+func solution비밀지도(_ n:Int, _ arr1:[Int], _ arr2:[Int]) -> [String] {
     
     //즉 배열의 카운트가 5(n)가 아니면 맨 앞에 0을 추가해서 n자리로 만들어주기
     //다른 배열로 동일하게 적용하고 두수 더하기

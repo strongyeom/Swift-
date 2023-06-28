@@ -2,7 +2,7 @@ import Foundation
 
 import Foundation
 
-func solution(_ n:Int) -> Int {
+func solution3진법뒤집기(_ n:Int) -> Int {
     
     let a1: String = String(String(n, radix: 3).reversed())
     // 10진수에서 3진수나 2진수로 만들떄는 String으로 붙여주기

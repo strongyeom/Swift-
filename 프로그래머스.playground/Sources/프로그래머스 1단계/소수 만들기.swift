@@ -1,6 +1,6 @@
 import Foundation
 
-func solutiona(_ nums:[Int]) -> Int {
+func solution소수만들기(_ nums:[Int]) -> Int {
     
     var emptyArray:[Int] = []
     var count = 0

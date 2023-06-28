@@ -1,6 +1,6 @@
 import Foundation
 
-func solution개인(_ today:String, _ terms:[String], _ privacies:[String]) -> [Int] {
+func solution개인정보수집유효기간(_ today:String, _ terms:[String], _ privacies:[String]) -> [Int] {
     var todayTime = today.split(separator:".").map{Int($0)!}
     var termsArr = terms
     var priv = privacies

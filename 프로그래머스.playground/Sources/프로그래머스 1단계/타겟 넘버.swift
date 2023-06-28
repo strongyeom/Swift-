@@ -1,6 +1,6 @@
 import Foundation
 
-func dfssolution(_ numbers:[Int], _ target:Int) -> Int {
+func dfssolution타겟넘버(_ numbers:[Int], _ target:Int) -> Int {
     
     // 한번에 마지막 노드까지 탐색하고 돌아와서 다시 노드까지 가는 방식
     // dfs는 재귀를 이용

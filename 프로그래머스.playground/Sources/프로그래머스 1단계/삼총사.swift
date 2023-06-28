@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ number:[Int]) -> Int {
+func solution삼총사(_ number:[Int]) -> Int {
     
     
     // 배열안에 있는 세가지 수를 더하여 0이 되는 갯수

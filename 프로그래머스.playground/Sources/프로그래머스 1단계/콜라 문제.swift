@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ a:Int, _ b:Int, _ n:Int) -> Int {
+func solution콜라문제(_ a:Int, _ b:Int, _ n:Int) -> Int {
     
     var count = n
     var result = 0

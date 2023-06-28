@@ -1,6 +1,6 @@
 import Foundation
 
-func solutiong(_ k:Int, _ score:[Int]) -> [Int] {
+func solutiong명예의전당(_ k:Int, _ score:[Int]) -> [Int] {
     
     // 가장 큰수부터 k번째 까지 끊기
     

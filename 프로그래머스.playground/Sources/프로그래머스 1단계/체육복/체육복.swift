@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
+func solution체육복(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
   
     // 기본적으로 1벌씩 갖고 있음
     var students: [Int] = [Int](repeating: 1, count: n)
