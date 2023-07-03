@@ -1,6 +1,6 @@
 import Foundation
 
-func solution(_ n:Int) -> Int {
+func solution피보나치수(_ n:Int) -> Int {
     
     // 고정 값으로는 0이면 0, 1이면 1
     
@@ -19,7 +19,3 @@ func solution(_ n:Int) -> Int {
     print("fibo",fibo)
     return fibo.last!
 }
-
-
-let result = solution(5)
-print(result)
