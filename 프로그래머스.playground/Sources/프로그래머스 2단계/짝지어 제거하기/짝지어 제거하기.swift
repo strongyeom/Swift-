@@ -26,8 +26,3 @@ func solution(_ s:String) -> Int{
         return 0
     }
 }
-
-
-let result = solution("cdcd")
-print(result)
-

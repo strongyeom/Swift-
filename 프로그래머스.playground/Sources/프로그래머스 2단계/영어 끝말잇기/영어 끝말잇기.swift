@@ -1,7 +1,6 @@
 import Foundation
 
-
-func solution(_ n:Int, _ words:[String]) -> [Int] {
+func solution영어끝말잇기(_ n:Int, _ words:[String]) -> [Int] {
    
     var wordDB: [String] = []
     
@@ -35,8 +34,3 @@ func solution(_ n:Int, _ words:[String]) -> [Int] {
     return [0,0]
 }
 
-
-let result = solution(2, ["hello", "one", "even", "never", "now", "world", "draw"])
-print(result)
-
- 
